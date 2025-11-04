@@ -13,6 +13,19 @@
       const osmd = new opensheetmusicdisplay.OpenSheetMusicDisplay("osmdContainer", {
         autoResize: true
       });
+
+      document.getElementById("fileInput").addEventListener("change", async(event) => {
+        const file = event.target.files[0];
+        if (!file) return;
+
+        const reader = new FileReader();
+        reader.onload = async (e) => {
+          const xmlData = e.target.result;
+          await osmd.load(xmlData);
+          osmd.render();
+        };
+        reader.readAsText(file);
+      });
     </script>
   </body>
 </html>
