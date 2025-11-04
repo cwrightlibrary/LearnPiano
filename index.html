@@ -3,16 +3,20 @@
   <head>
     <meta charset="UTF-8" />
     <title>Learn Piano</title>
-    <script src="https://unpkg.com/opensheetmusicdisplay@latest/build/opensheetmusicdisplay.min.js"></script>
+    <link rel="stylesheet" href="style.css">
   </head>
   <body>
-    <div id="osmdContainer"></div>
-    <input type="file" id="fileInput" accept=".xml,.musicxml,.mxl">
-
+    <div id="sheet-music-container"></div>
+    <script src="libs/opensheetmusicdisplay.min.js"></script>
     <script>
-      const osmd = new opensheetmusicdisplay.OpenSheetMusicDisplay("osmdContainer", {
-        autoResize: true
-      });
+      var osmd = new opensheetmusicdisplay.OpenSheetMusicDisplay("sheet-music-container");
+        osmd.setOptions({
+          backend: "svg",
+          drawTitle: true,
+        });
+        osmd.load("assets/vexflow_song.musicxml").then(function () {
+          osmd.render();
+        });
     </script>
   </body>
 </html>
