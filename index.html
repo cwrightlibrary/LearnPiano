@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Learn Piano</title>
+    <script src="https://unpkg.com/opensheetmusicdisplay@latest/build/opensheetmusicdisplay.min.js"></script>
+  </head>
+  <body>
+    <div id="osmdContainer"></div>
+    <input type="file" id="fileInput" accept=".xml,.musicxml,.mxl">
+
+    <script>
+      const osmd = new opensheetmusicdisplay.OpenSheetMusicDisplay("osmdContainer", {
+        autoResize: true
+      });
+    </script>
+  </body>
+</html>

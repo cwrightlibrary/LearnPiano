@@ -1,2 +1,3 @@
-# LearnPiano
-🎼 Learning piano using midi/vexflow with a focus on jazz music.
+# 🎼 Learn Piano
+
+Learning piano using midi/vexflow with a focus on jazz music.
